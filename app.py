@@ -9,8 +9,8 @@ modulos = st.sidebar.selectbox("Selecione el módulo",["Listas","Arreglos","Func
 if modulos == "Listas":
   st.write("Te encuentras en el módulo de listas")
 
-  valor_inicial = int(st.number_input("Ingrese tu valor inicial del rango", value=0))
-  valor_final = int(st.number_input("Ingrese tu valor inicial del rango",value=10))
+  valor_inicial = int(st.number_input("Ingresa tu valor inicial del rango", value=0))
+  valor_final = int(st.number_input("]Ingresa tu valor final del rango",value=10))
 
   Lista = list(range(valor_inicial, valor_final)) 
   
