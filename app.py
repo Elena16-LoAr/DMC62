@@ -9,6 +9,9 @@ modulos = st.sidebar.selectbox("Selecione el módulo",["Listas","Arreglos","Func
 if modulos == "Listas":
   st.write("Te encuentras en el módulo de listas")
 
+valor_inicial = st.number_imput("Ingrese tu valor inicial del rango")
+valor_final = st.number_imput("]Ingrese tu valor inicial del rango")
+
 elif modulos == "Arreglos":
   st.write("Te encuentras en el módulo de arreglos")
 
