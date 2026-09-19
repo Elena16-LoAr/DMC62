@@ -6,6 +6,7 @@ st.sidebar.title("Parámetros")
 st.write("Elaborado por: Elena Loayza")
 
 st.image("Python_logo.png",width =300)
+st.sidebar.image("DMC.png")
 
 
 modulos = st.sidebar.selectbox("Selecione el módulo",["Listas","Arreglos","Funciones","POO"])
