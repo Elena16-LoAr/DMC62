@@ -12,7 +12,7 @@ if modulos == "Listas":
   valor_inicial = int(st.number_input("Ingresa tu valor inicial del rango", value=0))
   valor_final = int(st.number_input("Ingresa tu valor final del rango",value=10))
 
-  Lista = list(range(valor_inicial, valor_final)) 
+  lista = list(range(valor_inicial, valor_final)) 
   
 elif modulos == "Arreglos":
   st.write("Te encuentras en el módulo de arreglos")
