@@ -3,7 +3,7 @@ import numpy as np
 
 st.title("Especialización Python for Analytics")
 st.sidebar.title("Parámetros")
-st.write(lista)("Elaborado por: Elena Loayza")
+st.write("Elaborado por: Elena Loayza")
 
 modulos = st.sidebar.selectbox("Selecione el módulo",["Listas","Arreglos","Funciones","POO"])
 
