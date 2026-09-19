@@ -3,12 +3,12 @@ import numpy as np
 
 st.title("Especialización Python for Analytics")
 st.sidebar.title("Parámetros")
-st.write("Elaborado por: Elena Loayza")
+st.write(lista)("Elaborado por: Elena Loayza")
 
 modulos = st.sidebar.selectbox("Selecione el módulo",["Listas","Arreglos","Funciones","POO"])
 
 if modulos == "Listas":
-  st.write(lista)("Te encuentras en el módulo de listas")
+  st.write("Te encuentras en el módulo de listas")
 
   valor_inicial = int(st.number_input("Ingresa tu valor inicial del rango", value=0))
   valor_final = int(st.number_input("Ingresa tu valor final del rango",value=10))
