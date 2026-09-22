@@ -10,129 +10,118 @@ import pandas as pd
 st.markdown("""
 <style>
 
-    /* Fondo general */
-    .stApp {
-        background: linear-gradient(135deg, #f5f7fa, #e8edf3);
-    }
+/* Fondo general */
+.stApp {
+    background: linear-gradient(135deg, #f5f7fa, #e8edf3);
+}
 
-    /* Título principal */
-    h1 {
-        color: #1f3b57;
-        text-align: center;
-        font-weight: 700;
-        animation: aparecer 0.8s ease-in-out;
-    }
+/* Título principal */
+h1 {
+    color: #1F4E79;
+    text-align: center;
+    font-weight: 700;
+    animation: aparecer 0.8s ease-in-out;
+}
 
-    /* Subtítulos */
-    h2, h3 {
-        color: #294c6b;
-    }
+/* Subtítulos */
+h2, h3 {
+    color: #1F4E79;
+}
 
-    /* Texto */
-    p, label {
-        color: #34495e;
-    }
+/* Botones */
+.stButton > button {
+    background-color: #1F4E79 !important;
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
+    border: none !important;
+    border-radius: 8px;
+    padding: 8px 20px;
+    transition: all 0.3s ease;
+}
 
-    /* Botones */
-    .stButton > button {
-        background: linear-gradient(90deg, #1f3b57, #315d7d);
-        color: white;
-        border: none;
-        border-radius: 8px;
-        padding: 8px 20px;
-        transition: all 0.3s ease;
-    }
+/* Animación e iluminación al interactuar */
+.stButton > button:hover {
+    background-color: #163A5C !important;
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
+    transform: scale(1.03);
+    box-shadow: 0 0 18px rgba(31, 78, 121, 0.6);
+}
 
-    /* Animación e iluminación al interactuar */
-    .stButton > button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 0 18px rgba(49, 93, 125, 0.45);
-        background: linear-gradient(90deg, #315d7d, #1f3b57);
-    }
+/* Campos de texto */
+.stTextInput input,
+.stNumberInput input {
+    border-radius: 7px;
+    border: 1px solid #B8C5D1;
+    transition: all 0.3s ease;
+}
 
-    /* Campos de texto */
-    .stTextInput input,
-    .stNumberInput input {
-        border-radius: 7px;
-        border: 1px solid #b8c5d1;
-        transition: all 0.3s ease;
-    }
+/* Iluminación al interactuar */
+.stTextInput input:focus,
+.stNumberInput input:focus {
+    border-color: #1F4E79;
+    box-shadow: 0 0 12px rgba(31, 78, 121, 0.30);
+}
 
-    /* Iluminación al seleccionar un campo */
-    .stTextInput input:focus,
-    .stNumberInput input:focus {
-        border-color: #315d7d;
-        box-shadow: 0 0 12px rgba(49, 93, 125, 0.30);
-    }
+/* Selectbox */
+div[data-baseweb="select"] {
+    border-radius: 7px;
+    transition: all 0.3s ease;
+}
 
-    /* Selectbox */
-    div[data-baseweb="select"] {
-        border-radius: 7px;
-        transition: all 0.3s ease;
-    }
+div[data-baseweb="select"]:hover {
+    box-shadow: 0 0 12px rgba(31, 78, 121, 0.20);
+}
 
-    div[data-baseweb="select"]:hover {
-        box-shadow: 0 0 12px rgba(49, 93, 125, 0.20);
-    }
+/* Métricas */
+[data-testid="stMetric"] {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
 
-    /* Métricas */
-    [data-testid="stMetric"] {
-        background: white;
-        padding: 15px;
-        border-radius: 10px;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-        transition: all 0.3s ease;
-    }
+[data-testid="stMetric"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 18px rgba(31, 78, 121, 0.25);
+}
 
-    /* Iluminación de las métricas */
-    [data-testid="stMetric"]:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 0 18px rgba(49, 93, 125, 0.25);
-    }
+/* Tablas */
+[data-testid="stDataFrame"] {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
 
-    /* Tablas */
-    [data-testid="stDataFrame"] {
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+/* Animación de entrada */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
     }
-
-    /* Animación de entrada */
-    @keyframes aparecer {
-        from {
-            opacity: 0;
-            transform: translateY(15px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
+}
 
-    /* Elemento animado */
-    .animacion {
-        animation: aparecer 0.8s ease-in-out;
-    }
+.animacion {
+    animation: aparecer 0.8s ease-in-out;
+}
 
 </style>
 
-
 <script>
-
-    // Animación de entrada de la aplicación
-    document.addEventListener("DOMContentLoaded", function() {
-
-        const app = document.querySelector(".stApp");
-
-        if (app) {
-            app.classList.add("animacion");
-        }
-
-    });
-
+document.addEventListener("DOMContentLoaded", function() {
+    const app = document.querySelector(".stApp");
+    if (app) {
+        app.classList.add("animacion");
+    }
+});
 </script>
 """, unsafe_allow_html=True)
+
 
 
 # ==========================================================
